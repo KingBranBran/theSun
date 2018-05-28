@@ -73,7 +73,7 @@ public class theSunScript : MonoBehaviour
 
     void LEDPicker()
     {
-        ledIndex = UnityEngine.Random.Range(0,8);
+        ledIndex = UnityEngine.Random.Range(0, 8);
         leds[ledIndex].enabled = true;
         Debug.LogFormat("[The Sun #{0}] The LED is in the {1} position.", moduleId, ledLocations[ledIndex]);
     }
@@ -417,237 +417,237 @@ public class theSunScript : MonoBehaviour
         switch (stage)
         {
             case 1:
-            if (button == correctButtonsOrdered[0])
-            {
-                Debug.LogFormat("[The Sun #{0}] You pressed {1}. That is correct.", moduleId, correctButtonsOrdered[0].name);
-                if (correctButtonsOrdered[0] != buttons[16])
+                if (button == correctButtonsOrdered[0])
                 {
-                    correctLightsOrdered[0].enabled = true;
-                    Audio.PlaySoundAtTransform("tone1", transform);
-                    stage++;
+                    Debug.LogFormat("[The Sun #{0}] You pressed {1}. That is correct.", moduleId, correctButtonsOrdered[0].name);
+                    if (correctButtonsOrdered[0] != buttons[16])
+                    {
+                        correctLightsOrdered[0].enabled = true;
+                        Audio.PlaySoundAtTransform("tone1", transform);
+                        stage++;
+                    }
+                    else
+                    {
+                        lights[16].enabled = true;
+                        Audio.PlaySoundAtTransform("tone8", transform);
+                        ModuleSolved();
+                    }
                 }
                 else
                 {
-                    lights[16].enabled = true;
-                    Audio.PlaySoundAtTransform("tone8", transform);
-                    ModuleSolved();
+                    Debug.LogFormat("[The Sun #{0}] Strike! You pressed {1}. That is incorrect. I was expecting {2}.", moduleId, button.name, correctButtonsOrdered[0].name);
+                    stage = 1;
+                    foreach (Light light in lights)
+                    {
+                        light.enabled = false;
+                    }
+                    GetComponent<KMBombModule>().HandleStrike();
                 }
-            }
-            else
-            {
-                Debug.LogFormat("[The Sun #{0}] Strike! You pressed {1}. That is incorrect. I was expecting {2}.", moduleId, button.name, correctButtonsOrdered[0].name);
-                stage = 1;
-                foreach (Light light in lights)
-                {
-                    light.enabled = false;
-                }
-                GetComponent<KMBombModule>().HandleStrike();
-            }
-            break;
+                break;
 
             case 2:
-            if (button == correctButtonsOrdered[1])
-            {
-                Debug.LogFormat("[The Sun #{0}] You pressed {1}. That is correct.", moduleId, correctButtonsOrdered[1].name);
-                if (correctButtonsOrdered[1] != buttons[16])
+                if (button == correctButtonsOrdered[1])
                 {
-                    correctLightsOrdered[1].enabled = true;
-                    Audio.PlaySoundAtTransform("tone2", transform);
-                    stage++;
+                    Debug.LogFormat("[The Sun #{0}] You pressed {1}. That is correct.", moduleId, correctButtonsOrdered[1].name);
+                    if (correctButtonsOrdered[1] != buttons[16])
+                    {
+                        correctLightsOrdered[1].enabled = true;
+                        Audio.PlaySoundAtTransform("tone2", transform);
+                        stage++;
+                    }
+                    else
+                    {
+                        lights[16].enabled = true;
+                        Audio.PlaySoundAtTransform("tone8", transform);
+                        ModuleSolved();
+                    }
                 }
                 else
                 {
-                    lights[16].enabled = true;
-                    Audio.PlaySoundAtTransform("tone8", transform);
-                    ModuleSolved();
+                    Debug.LogFormat("[The Sun #{0}] Strike! You pressed {1}. That is incorrect. I was expecting {2}.", moduleId, button.name, correctButtonsOrdered[1].name);
+                    stage = 1;
+                    foreach (Light light in lights)
+                    {
+                        light.enabled = false;
+                    }
+                    GetComponent<KMBombModule>().HandleStrike();
                 }
-            }
-            else
-            {
-                Debug.LogFormat("[The Sun #{0}] Strike! You pressed {1}. That is incorrect. I was expecting {2}.", moduleId, button.name, correctButtonsOrdered[1].name);
-                stage = 1;
-                foreach (Light light in lights)
-                {
-                    light.enabled = false;
-                }
-                GetComponent<KMBombModule>().HandleStrike();
-            }
-            break;
+                break;
 
             case 3:
-            if (button == correctButtonsOrdered[2])
-            {
-                Debug.LogFormat("[The Sun #{0}] You pressed {1}. That is correct.", moduleId, correctButtonsOrdered[2].name);
-                if (correctButtonsOrdered[2] != buttons[16])
+                if (button == correctButtonsOrdered[2])
                 {
-                    correctLightsOrdered[2].enabled = true;
-                    Audio.PlaySoundAtTransform("tone3", transform);
-                    stage++;
+                    Debug.LogFormat("[The Sun #{0}] You pressed {1}. That is correct.", moduleId, correctButtonsOrdered[2].name);
+                    if (correctButtonsOrdered[2] != buttons[16])
+                    {
+                        correctLightsOrdered[2].enabled = true;
+                        Audio.PlaySoundAtTransform("tone3", transform);
+                        stage++;
+                    }
+                    else
+                    {
+                        lights[16].enabled = true;
+                        Audio.PlaySoundAtTransform("tone8", transform);
+                        ModuleSolved();
+                    }
                 }
                 else
                 {
-                    lights[16].enabled = true;
-                    Audio.PlaySoundAtTransform("tone8", transform);
-                    ModuleSolved();
+                    Debug.LogFormat("[The Sun #{0}] Strike! You pressed {1}. That is incorrect. I was expecting {2}.", moduleId, button.name, correctButtonsOrdered[2].name);
+                    stage = 1;
+                    foreach (Light light in lights)
+                    {
+                        light.enabled = false;
+                    }
+                    GetComponent<KMBombModule>().HandleStrike();
                 }
-            }
-            else
-            {
-                Debug.LogFormat("[The Sun #{0}] Strike! You pressed {1}. That is incorrect. I was expecting {2}.", moduleId, button.name, correctButtonsOrdered[2].name);
-                stage = 1;
-                foreach (Light light in lights)
-                {
-                    light.enabled = false;
-                }
-                GetComponent<KMBombModule>().HandleStrike();
-            }
-            break;
+                break;
 
             case 4:
-            if (button == correctButtonsOrdered[3])
-            {
-                Debug.LogFormat("[The Sun #{0}] You pressed {1}. That is correct.", moduleId, correctButtonsOrdered[3].name);
-                if (correctButtonsOrdered[3] != buttons[16])
+                if (button == correctButtonsOrdered[3])
                 {
-                    correctLightsOrdered[3].enabled = true;
-                    Audio.PlaySoundAtTransform("tone4", transform);
-                    stage++;
+                    Debug.LogFormat("[The Sun #{0}] You pressed {1}. That is correct.", moduleId, correctButtonsOrdered[3].name);
+                    if (correctButtonsOrdered[3] != buttons[16])
+                    {
+                        correctLightsOrdered[3].enabled = true;
+                        Audio.PlaySoundAtTransform("tone4", transform);
+                        stage++;
+                    }
+                    else
+                    {
+                        lights[16].enabled = true;
+                        Audio.PlaySoundAtTransform("tone8", transform);
+                        ModuleSolved();
+                    }
                 }
                 else
                 {
-                    lights[16].enabled = true;
-                    Audio.PlaySoundAtTransform("tone8", transform);
-                    ModuleSolved();
+                    Debug.LogFormat("[The Sun #{0}] Strike! You pressed {1}. That is incorrect. I was expecting {2}.", moduleId, button.name, correctButtonsOrdered[3].name);
+                    stage = 1;
+                    foreach (Light light in lights)
+                    {
+                        light.enabled = false;
+                    }
+                    GetComponent<KMBombModule>().HandleStrike();
                 }
-            }
-            else
-            {
-                Debug.LogFormat("[The Sun #{0}] Strike! You pressed {1}. That is incorrect. I was expecting {2}.", moduleId, button.name, correctButtonsOrdered[3].name);
-                stage = 1;
-                foreach (Light light in lights)
-                {
-                    light.enabled = false;
-                }
-                GetComponent<KMBombModule>().HandleStrike();
-            }
-            break;
+                break;
 
             case 5:
-            if (button == correctButtonsOrdered[4])
-            {
-                Debug.LogFormat("[The Sun #{0}] You pressed {1}. That is correct.", moduleId, correctButtonsOrdered[4].name);
-                if (correctButtonsOrdered[4] != buttons[16])
+                if (button == correctButtonsOrdered[4])
                 {
-                    correctLightsOrdered[4].enabled = true;
-                    Audio.PlaySoundAtTransform("tone5", transform);
-                    stage++;
+                    Debug.LogFormat("[The Sun #{0}] You pressed {1}. That is correct.", moduleId, correctButtonsOrdered[4].name);
+                    if (correctButtonsOrdered[4] != buttons[16])
+                    {
+                        correctLightsOrdered[4].enabled = true;
+                        Audio.PlaySoundAtTransform("tone5", transform);
+                        stage++;
+                    }
+                    else
+                    {
+                        lights[16].enabled = true;
+                        Audio.PlaySoundAtTransform("tone8", transform);
+                        ModuleSolved();
+                    }
                 }
                 else
                 {
-                    lights[16].enabled = true;
-                    Audio.PlaySoundAtTransform("tone8", transform);
-                    ModuleSolved();
+                    Debug.LogFormat("[The Sun #{0}] Strike! You pressed {1}. That is incorrect. I was expecting {2}.", moduleId, button.name, correctButtonsOrdered[4].name);
+                    stage = 1;
+                    foreach (Light light in lights)
+                    {
+                        light.enabled = false;
+                    }
+                    GetComponent<KMBombModule>().HandleStrike();
                 }
-            }
-            else
-            {
-                Debug.LogFormat("[The Sun #{0}] Strike! You pressed {1}. That is incorrect. I was expecting {2}.", moduleId, button.name, correctButtonsOrdered[4].name);
-                stage = 1;
-                foreach (Light light in lights)
-                {
-                    light.enabled = false;
-                }
-                GetComponent<KMBombModule>().HandleStrike();
-            }
-            break;
+                break;
 
             case 6:
-            if (button == correctButtonsOrdered[5])
-            {
-                Debug.LogFormat("[The Sun #{0}] You pressed {1}. That is correct.", moduleId, correctButtonsOrdered[5].name);
-                if (correctButtonsOrdered[5] != buttons[16])
+                if (button == correctButtonsOrdered[5])
                 {
-                    correctLightsOrdered[5].enabled = true;
-                    Audio.PlaySoundAtTransform("tone6", transform);
-                    stage++;
+                    Debug.LogFormat("[The Sun #{0}] You pressed {1}. That is correct.", moduleId, correctButtonsOrdered[5].name);
+                    if (correctButtonsOrdered[5] != buttons[16])
+                    {
+                        correctLightsOrdered[5].enabled = true;
+                        Audio.PlaySoundAtTransform("tone6", transform);
+                        stage++;
+                    }
+                    else
+                    {
+                        lights[16].enabled = true;
+                        Audio.PlaySoundAtTransform("tone8", transform);
+                        ModuleSolved();
+                    }
                 }
                 else
                 {
-                    lights[16].enabled = true;
-                    Audio.PlaySoundAtTransform("tone8", transform);
-                    ModuleSolved();
+                    Debug.LogFormat("[The Sun #{0}] Strike! You pressed {1}. That is incorrect. I was expecting {2}.", moduleId, button.name, correctButtonsOrdered[5].name);
+                    stage = 1;
+                    foreach (Light light in lights)
+                    {
+                        light.enabled = false;
+                    }
+                    GetComponent<KMBombModule>().HandleStrike();
                 }
-            }
-            else
-            {
-                Debug.LogFormat("[The Sun #{0}] Strike! You pressed {1}. That is incorrect. I was expecting {2}.", moduleId, button.name, correctButtonsOrdered[5].name);
-                stage = 1;
-                foreach (Light light in lights)
-                {
-                    light.enabled = false;
-                }
-                GetComponent<KMBombModule>().HandleStrike();
-            }
-            break;
+                break;
 
             case 7:
-            if (button == correctButtonsOrdered[6])
-            {
-                Debug.LogFormat("[The Sun #{0}] You pressed {1}. That is correct.", moduleId, correctButtonsOrdered[6].name);
-                if (correctButtonsOrdered[6] != buttons[16])
+                if (button == correctButtonsOrdered[6])
                 {
-                    correctLightsOrdered[6].enabled = true;
-                    Audio.PlaySoundAtTransform("tone7", transform);
-                    stage++;
+                    Debug.LogFormat("[The Sun #{0}] You pressed {1}. That is correct.", moduleId, correctButtonsOrdered[6].name);
+                    if (correctButtonsOrdered[6] != buttons[16])
+                    {
+                        correctLightsOrdered[6].enabled = true;
+                        Audio.PlaySoundAtTransform("tone7", transform);
+                        stage++;
+                    }
+                    else
+                    {
+                        lights[16].enabled = true;
+                        Audio.PlaySoundAtTransform("tone8", transform);
+                        ModuleSolved();
+                    }
                 }
                 else
                 {
-                    lights[16].enabled = true;
-                    Audio.PlaySoundAtTransform("tone8", transform);
-                    ModuleSolved();
+                    Debug.LogFormat("[The Sun #{0}] Strike! You pressed {1}. That is incorrect. I was expecting {2}.", moduleId, button.name, correctButtonsOrdered[6].name);
+                    stage = 1;
+                    foreach (Light light in lights)
+                    {
+                        light.enabled = false;
+                    }
+                    GetComponent<KMBombModule>().HandleStrike();
                 }
-            }
-            else
-            {
-                Debug.LogFormat("[The Sun #{0}] Strike! You pressed {1}. That is incorrect. I was expecting {2}.", moduleId, button.name, correctButtonsOrdered[6].name);
-                stage = 1;
-                foreach (Light light in lights)
-                {
-                    light.enabled = false;
-                }
-                GetComponent<KMBombModule>().HandleStrike();
-            }
-            break;
+                break;
 
             case 8:
-            if (button == correctButtonsOrdered[7])
-            {
-                Debug.LogFormat("[The Sun #{0}] You pressed {1}. That is correct.", moduleId, correctButtonsOrdered[7].name);
-                if (correctButtonsOrdered[7] != buttons[16])
+                if (button == correctButtonsOrdered[7])
                 {
-                    correctLightsOrdered[7].enabled = true;
-                    Audio.PlaySoundAtTransform("tone8", transform);
-                    stage++;
-                    ModuleSolved();
+                    Debug.LogFormat("[The Sun #{0}] You pressed {1}. That is correct.", moduleId, correctButtonsOrdered[7].name);
+                    if (correctButtonsOrdered[7] != buttons[16])
+                    {
+                        correctLightsOrdered[7].enabled = true;
+                        Audio.PlaySoundAtTransform("tone8", transform);
+                        stage++;
+                        ModuleSolved();
+                    }
+                    else
+                    {
+                        lights[16].enabled = true;
+                        Audio.PlaySoundAtTransform("tone8", transform);
+                        ModuleSolved();
+                    }
                 }
                 else
                 {
-                    lights[16].enabled = true;
-                    Audio.PlaySoundAtTransform("tone8", transform);
-                    ModuleSolved();
+                    Debug.LogFormat("[The Sun #{0}] Strike! You pressed {1}. That is incorrect. I was expecting {2}.", moduleId, button.name, correctButtonsOrdered[7].name);
+                    stage = 1;
+                    foreach (Light light in lights)
+                    {
+                        light.enabled = false;
+                    }
+                    GetComponent<KMBombModule>().HandleStrike();
                 }
-            }
-            else
-            {
-                Debug.LogFormat("[The Sun #{0}] Strike! You pressed {1}. That is incorrect. I was expecting {2}.", moduleId, button.name, correctButtonsOrdered[7].name);
-                stage = 1;
-                foreach (Light light in lights)
-                {
-                    light.enabled = false;
-                }
-                GetComponent<KMBombModule>().HandleStrike();
-            }
-            break;
+                break;
 
             default:
                 break;
@@ -733,5 +733,150 @@ public class theSunScript : MonoBehaviour
         lights[13].enabled = true;
         lights[15].enabled = true;
         lights[16].enabled = true;
+    }
+
+#pragma warning disable 414
+    private string TwitchHelpMessage = @"Use “!{0} press inner top” to press the inner top button. Use “!{0} press outer bottomleft” to press the outer top left button. Use “!{0} press center” to press the center button. Combine the commands using a colon (;). NEWS directions (North-East-South-West) and shortened directions (“t” and “n”) also work.";
+#pragma warning restore 414
+
+    private static string[] supportedSections = new[] { "inner", "outer" };
+    private static string[] supportedDirections = new[] { "top", "bottom", "left", "right", "topleft", "topright", "bottomleft", "bottomright", "north", "south", "east", "west", "northwest", "northeast", "southwest", "southeast", "n", "s", "e", "w", "nw", "ne", "sw", "se", "t", "b", "l", "r", "tl", "bl", "tr", "br" };
+
+    IEnumerator ProcessTwitchCommand(string command)
+    {
+        var parts = command.ToLowerInvariant().Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+
+        if (parts.Length > 1 && parts[0] == "press")
+        {
+            var cmdButtons = command.ToLowerInvariant().Replace("press ", "").Split(new[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
+
+            bool goodCommands = true;
+
+            foreach (string cmd in cmdButtons)
+            {
+                if (!((cmd.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).Length == 1 && cmd.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries)[0] == "center") || (cmd.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).Length == 2 && supportedSections.Contains(cmd.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries)[0]) && supportedDirections.Contains(cmd.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries)[1]))))
+                {
+                    goodCommands = false;
+                }
+            }
+
+            if (goodCommands)
+            {
+                yield return null;
+
+                foreach (string cmd in cmdButtons)
+                {
+                    var split = cmd.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                    if (split.Length == 1)
+                    {
+                        CheckAndPress("center", "");
+                    }
+                    else
+                    {
+                        CheckAndPress(split[0], split[1]);
+                    }
+                    
+                    yield return new WaitForSeconds(.2f);
+                }
+                yield break;
+            }
+            
+        }
+    }
+
+    void CheckAndPress(string section, string direction)
+    {
+        if (new[] { "top", "t", "north", "n" }.Contains(direction))
+        {
+            if (section == "outer")
+            {
+                Onbutton(buttons[0]);
+            }
+            else
+            {
+                Onbutton(buttons[8]);
+            }
+        }
+        else if (new[] { "topright", "tr", "northeast", "ne" }.Contains(direction))
+        {
+            if (section == "outer")
+            {
+                Onbutton(buttons[1]);
+            }
+            else
+            {
+                Onbutton(buttons[9]);
+            }
+        }
+        else if (new[] { "right", "r", "east", "e" }.Contains(direction))
+        {
+            if (section == "outer")
+            {
+                Onbutton(buttons[2]);
+            }
+            else
+            {
+                Onbutton(buttons[10]);
+            }
+        }
+        else if (new[] { "bottomright", "br", "southeast", "se" }.Contains(direction))
+        {
+            if (section == "outer")
+            {
+                Onbutton(buttons[3]);
+            }
+            else
+            {
+                Onbutton(buttons[11]);
+            }
+        }
+        else if (new[] { "bottom", "b", "south", "s" }.Contains(direction))
+        {
+            if (section == "outer")
+            {
+                Onbutton(buttons[4]);
+            }
+            else
+            {
+                Onbutton(buttons[12]);
+            }
+        }
+        else if (new[] { "bottomleft", "bl", "southwest", "sw" }.Contains(direction))
+        {
+            if (section == "outer")
+            {
+                Onbutton(buttons[5]);
+            }
+            else
+            {
+                Onbutton(buttons[13]);
+            }
+        }
+        else if (new[] { "left", "l", "west", "w" }.Contains(direction))
+        {
+            if (section == "outer")
+            {
+                Onbutton(buttons[6]);
+            }
+            else
+            {
+                Onbutton(buttons[14]);
+            }
+        }
+        else if (new[] { "topleft", "tl", "northwest", "nw" }.Contains(direction))
+        {
+            if (section == "outer")
+            {
+                Onbutton(buttons[7]);
+            }
+            else
+            {
+                Onbutton(buttons[15]);
+            }
+        }
+        else if (section == "center")
+        {
+            Onbutton(buttons[16]);
+        }
     }
 }
